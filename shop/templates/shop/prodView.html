@@ -1,0 +1,39 @@
+{% extends 'shop/basic.html' %}
+
+{% block title%} {{ product.product_name }} {% endblock %}
+{% block body %}
+<style>
+    .pr_img {
+        width: 320px;
+        height: 385px;
+    }
+
+    .price {
+        color: red;
+        font-weight: bold;
+    }
+</style>
+<div class="container my-4">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="row">
+
+                <img class="pr_img" src="/media/{{ product.image }}" alt="{{ product.product_name }}">
+
+                <div class="row my-2">
+                    <button class="btn btn-primary mx-3">Buy Now</button>
+                    <button class="btn btn-primary">Add To Cart</button>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="col-md-8">
+            <h4>{{ product.product_name }}</h4>
+            <p class="price">Price: ₹ {{ product.price }}</p>
+            <p>{{ product.desc }}</p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
